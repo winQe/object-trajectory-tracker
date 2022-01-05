@@ -1,13 +1,3 @@
-/*
- * collision-detector
- *
- * Using an RGB-D (depth) camera, detect people and measure the distance to them.
- *
- * Copyright 2019 Mark Fassler
- * Licensed under the GPLv3
- *
- */
-
 #include <stdio.h>
 #include <sys/time.h>
 #include <unistd.h>
@@ -69,7 +59,7 @@ int main(int argc, char* argv[]) {
 	float _MAX_DISPLAY_DISTANCE_IN_METERS = 3.0;
 	float _YELLOW_DISTANCE_IN_METERS = 2.0;
 	float _RED_DISTANCE_IN_METERS = 1.0;
-	deque<cv::Point> trajectory;
+	deque <cv::Point> trajectory;
 
 
 	// //Initialize ROS Node
@@ -92,7 +82,6 @@ int main(int argc, char* argv[]) {
 	OpenParams params(dev_info.index);
 	{
 		params.framerate = 30;
-		//params.depth_mode = DepthMode::DEPTH_RAW;
 		params.stream_mode = StreamMode::STREAM_1280x720;
 		params.ir_intensity = 4;
 	}
@@ -141,7 +130,6 @@ int main(int argc, char* argv[]) {
 	while (true) {
 
 		cam.WaitForStream();
-		//counter.Update();
 
 		auto image_color = cam.GetStreamData(ImageType::IMAGE_LEFT_COLOR);
 		if (image_color.img) {
@@ -264,7 +252,6 @@ int main(int argc, char* argv[]) {
 		}
 		
 		sprintf(textBuffer2, "X : %.02f   Y : %.02f",x_mid,y_mid);
-		// cv::putText(imRGB, textBuffer, cv::Point(19,119), font, 2, cv::Scalar(0,0,0), 8);  // black shadow
 		cv::putText(imRGB, textBuffer2, cv::Point(10,140), font, 1.5, cv::Scalar(255,255,255), 8);  // white text
 		for (int t=1;t<trajectory.size();t+=3){
 			cv::line(imRGB,trajectory[t-1],trajectory[t],cv::Scalar(255,0,0),10);}
@@ -273,9 +260,6 @@ int main(int argc, char* argv[]) {
 		cv::setWindowProperty("MYNT-EYE-D", cv::WND_PROP_AUTOSIZE, cv::WINDOW_NORMAL);
 		cv::imshow("MYNT-EYE-D", imRGB);
 		cv::waitKey(1);
-
-		//gettimeofday(&tv, NULL);
-		//printf("ts: %ld.%06ld\n", tv.tv_sec, tv.tv_usec);
 		count++;
 	}
 
