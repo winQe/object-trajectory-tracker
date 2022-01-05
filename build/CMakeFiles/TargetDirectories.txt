@@ -1,0 +1,3 @@
+/home/adin/object-tracker/build/CMakeFiles/rebuild_cache.dir
+/home/adin/object-tracker/build/CMakeFiles/object_tracker.dir
+/home/adin/object-tracker/build/CMakeFiles/edit_cache.dir

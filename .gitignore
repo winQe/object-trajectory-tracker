@@ -1,0 +1,13 @@
+
+
+## vim swap files:
+.*.swp
+
+
+## Compiled Binaries:
+alertIfTooClose
+*.o
+
+darknet/yolov4.weights
+darknet/yolov3.weights
+darknet/yolov3-tiny.weights
