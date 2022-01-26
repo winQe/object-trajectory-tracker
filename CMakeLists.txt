@@ -21,9 +21,6 @@ CDNeuralNet.cpp
 CDNeuralNet.hpp
 )
 
-## Specify libraries to link a library or executable target against
-# link_directories(/home/MYNT-EYE-D-SDK/3rdparty/eSPDI/linux/x64
-
 target_link_libraries(${PROJECT_NAME}
   pthread
   stdc++
@@ -32,31 +29,3 @@ target_link_libraries(${PROJECT_NAME}
   mynteye_depth
   ${OpenCV_LIBS}
 )
-
-
-# add_library(LIBeSPDI SHARED IMPORTED )
-# set_target_properties(LIBeSPDI PROPERTIES IMPORTED_LOCATION ${CMAKE_CURRENT_LIST_DIR}/MYNT-EYE-D-SDK/3rdparty/eSPDI/linux/x64/libeSPDI.so)
-# target_link_libraries(eSPDI SHARED LIBeSPDI )
-
-
-
-# # use, i.e. don't skip the full RPATH for the build tree
-# set(CMAKE_SKIP_BUILD_RPATH FALSE)
-
-# when building, don't use the install RPATH already
-# (but later on when installing)
-# set(CMAKE_BUILD_WITH_INSTALL_RPATH FALSE)
-
-# set(CMAKE_INSTALL_RPATH "~/MYNT-EYE-D-SDK/3rdparty/eSPDI/linux/x64")
-# # add the automatically determined parts of the RPATH
-# # which point to directories outside the build tree to the install RPATH
-# set(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
-
-
-
-# include_directories(
-#     ~/MYNT-EYE-D-SDK/3rdparty/eSPDI/linux/x64
-# )
-
-# set(SOURCES main.cpp ~/MYNT-EYE-D-SDK/3rdparty/eSPDI/linux/x64/libeSPDI.so)
-# add_executable(libesPDI ${SOURCES})
