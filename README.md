@@ -47,3 +47,4 @@ To run the code
 
 ## Future works
 * Implement other algorithm such as DEEP-SORT to perform the tracking.
+* Recalibrate the depth scale at [main.cpp](main.cpp) line 98 as it is not very accurate in the current state
